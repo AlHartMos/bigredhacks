@@ -17,7 +17,7 @@ def index():
 @app.route("/encode")
 def encode():
     global key 
-    key = random.choice(keys)
+    key = random.choice(keys).upper()
     global message 
     message = random.choice(quotes)
     global encoded_message 
@@ -27,7 +27,7 @@ def encode():
 @app.route("/decode")
 def decode():
     global key 
-    key = random.choice(keys)
+    key = random.choice(keys).upper()
     global message
     message = random.choice(quotes)
     global encoded_message 
