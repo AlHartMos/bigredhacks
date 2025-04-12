@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Decode Messages{% endblock %}
+
+{% block main %}
+<main>
+  <h1>Decoding using a Vigenère Cipher</h1>
+
+  <p><strong>Message:</strong> <code>{{ message }}</code></p>
+  <p><strong>Key:</strong> <code>{{ key }}</code></p>
+
+  <form action=/response method="get">
+    <button type="submit">Check my answer</button>
+  </form>
+</main>
+{% endblock %}

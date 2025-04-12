@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Answer{% endblock %}
+
+{% block main %}
+<main>
+  <h1>Your Vigenère Cipher Results</h1>
+
+  <p><strong>Plaintext:</strong> <code>{{ message }}</code></p>
+  <p><strong>Key:</strong> <code>{{ key }}</code></p>
+  <p><strong>Ciphertext Text Message:</strong> <code>{{ encoded_message }}</code></p>
+
+  <hr>
+
+  <h2>Common Mistakes to Watch Out For</h2>
+  <ul>
+    <li><strong>Forgetting to repeat the key:</strong> Make sure the key is repeated or extended to match the length of the plaintext exactly.</li>
+    <li><strong>Wrong letter shifts:</strong> Remember that A = 0, B = 1, C = 2, etc. Don’t accidentally start with A = 1!</li>
+    <li><strong>Misalignment:</strong> Be careful not to skip or double-use letters when writing out the key and message.</li>
+    <li><strong>Math errors:</strong> The letter shift is like modular math — if you go past Z, wrap back around to A.</li>
+    <li><strong>Using the wrong alphabet:</strong> Make sure you're only using capital letters A–Z with no spaces or punctuation.</li>
+    <li><strong>Mixing up encoding and decoding:</strong> Encoding = shift forward, decoding = shift backward.</li>
+  </ul>
+
+  <p>Don't worry if you made a mistake — decoding by hand is tricky at first, but practice makes it easier!</p>
+</main>
+<div style="margin-top: 2em;">
+    <form action="/encode" method="get" style="display: inline-block;">
+      <button type="submit">Practice Encoding</button>
+    </form>
+    <form action="/decode" method="get" style="display: inline-block; margin-right: 1em;">
+        <button type="submit">Practice Decoding</button>
+      </form>
+  </div>
+{% endblock %}

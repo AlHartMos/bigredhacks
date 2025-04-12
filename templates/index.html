@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<main>
+    <h1>How Vigenère Ciphers Work</h1>
+  
+    <p>
+      A <strong>Vigenère cipher</strong> is a way to hide a message by changing the letters so only someone with a secret key can read it.
+    </p>
+  
+    <h2>The Idea</h2>
+    <p>
+      It works kind of like a secret code wheel. You use a word, like <code>KEY</code>, to shift the letters of your message.
+    </p>
+  
+    <h2>Example</h2>
+    <p>Let’s say you want to send this message:</p>
+    <p><code>HELLO</code></p>
+  
+    <p>And your secret key is:</p>
+    <p><code>KEY</code></p>
+  
+    <p>We repeat the key to match the length of the message:</p>
+    <p><code>KEYKE</code></p>
+  
+    <p>Now we shift each letter in <code>HELLO</code> by the matching letter in the key:</p>
+  
+    <ul>
+      <li><code>H</code> + <code>K</code> = <code>R</code></li>
+      <li><code>E</code> + <code>E</code> = <code>I</code></li>
+      <li><code>L</code> + <code>Y</code> = <code>J</code></li>
+      <li><code>L</code> + <code>K</code> = <code>V</code></li>
+      <li><code>O</code> + <code>E</code> = <code>S</code></li>
+    </ul>
+  
+    <p>So the encrypted message is:</p>
+    <p><strong><code>RIJVS</code></strong></p>
+
+    <h2>Vigenère Table</h2>
+    <p>
+      A <strong>Vigenère Table</strong> is used to visualize this process. Here's the same encoding of the word HELLO using a Vigenère Table.</p>
+    </p>
+    <img alt="Encoding HELLO" src="static/encoding_hello.jpg" style="width: 400px; height: 250px;">
+  
+    <h2>Why It’s Cool</h2>
+    <p>
+      Unlike simple ciphers (like Caesar), Vigenère ciphers use different shifts for each letter, making them much harder to crack without the key!
+    </p>
+  
+    <h2>Fun Fact</h2>
+    <p>
+      People used Vigenère ciphers for hundreds of years to keep their messages secret. They were considered "unbreakable" for a long time!
+    </p>
+
+    <h2>Now You!</h2>
+    <p>
+      Go to the <strong>Encode</strong> to practice encoding or messages with a Vigenère cipher or go to the <strong>Decode</strong> page to challenge yourselves and practice decoding!
+    </p>
+
+    <!-- Download Vigenère Table Section -->
+     <h2>Download a Vigenère Table</h2>
+     <p>For teachers, download a Vigenère table to hand out to students for a class activity.</p>
+     <div style="text-align: center; margin-top: 30px;">
+      <a href="table.jpg" download="table.jpg">
+      <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 8px;">
+          Download Image
+      </button>
+      </a>
+    </div>
+
+
+{% endblock %}
+
